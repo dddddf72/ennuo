@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旋转比例模拟</title>
+  <style>
+    .content  {
+      position: absolute;
+      width: 400px;
+      height: 300px;
+      -webkit-perspective: 400px;
+      perspective: 400px;
+      left: 100px;
+      top: 100px;
+    }
+    .wrapper{
+      position: absolute;
+      width: 320px;
+      height: 240px;
+      transform: rotate(-30deg) rotateX(0deg);
+      border: solid 2px #000;
+    }
+    .wrapper .rotate{
+      transform: rotate(-30deg) rotateX(50deg);
+    }
+    .wrapper::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 400px;
+      left: -40px;
+      top: 120px;
+      height: 2px;
+      background: black;
+    }
+    .wrapper img{
+      width: 100%;
+      height: 100%;
+    }
+    /* 测试视频比例拉伸 */
+    video{
+      object-fit: fill;
+      width: 800px;
+      height: 320px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="wrapper">
+      <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="">
+    </div>
+    <div class="wrapper rotate">
+      <img src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg" alt="">
+    </div>
+  </div>
+  <div>
+    <h1>测试视频比例拉伸</h1>
+    <video src="http://7xnzpx.com1.z0.glb.clouddn.com/miaoxingren_360p.mp4" controls autoplay loop></video>
+  </div>
+  <script>
+    // 强制给video标签设置width和height的话只会将video的显示区域拉伸
+    // object-fit: fill;这一属性兼容性不太好，IE全军覆没，安卓要4.4.3以上才支持
+
+        // 假如原视频分辨率为640*320（16:9）
+
+    // 宽高比变大 保持宽度不变  调整rotateX实现高度变小  
+    // 想调成16：7  也就是640*280
+    // cos α = 新高度/旧高度 = 280/360
+    // var rotate = (Math.acos(280/360)*180/Math.PI).toFixed(2)
+
+    // 宽高比变小 以高度为基准  调整rotateY实现宽度变小
+    // 想调成4:3 也就是480*320
+    // cos α = 新宽度/旧宽度 = 480/640
+    // var rotate = (Math.acos(4980/640)*180/Math.PI).toFixed(2)
+  </script>
+</body>
+</html>

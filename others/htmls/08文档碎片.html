@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    文档碎片
+    文档碎片可以提高DOM操作性能
+    document.createDocumentFragment()
+    原理:将dom暂存在fragment上，之后一次性添加到dom
+   -->
+   <ul id="parent"></ul>
+   <script>
+     var parent = document.getElementById("parent")
+     var oFrag = document.createDocumentFragment()
+     for(var i = 0;i<10;i++){
+       var li = document.createElement("li")
+       oFrag.appendChild(li)
+     }
+     parent.appendChild(oFrag)
+   </script>
+</body>
+</html>

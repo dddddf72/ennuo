@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //global  是否全文搜索
+    //ignore case 是否大小写敏感
+    //multiline 多行搜索
+    //lastIndex 是当前表达式匹配内容的最后一个字符的下一个位置
+
+    // // 正则自带的api  test()
+    // //测试字符串中是否存在匹配正则表达式的字符串  是有没有的问题，为局部匹配而生  返回Boolean值
+    // var a = "aah"
+    // var reg = /a/g
+    // console.log(reg.test(a)); //true
+    // console.log(reg.test(a)); //true
+    // console.log(reg.test(a)); //false
+    // console.log(reg.test(a)); //true
+    // console.log(reg.test(a)); //true
+    // console.log(reg.test(a)); //false
+    // //它从匹配字符串的第一位开始找  之后从字符串的下一个位找，找到不匹配的再从头找
+
+
+    var str = "ab"
+    var reg = /[a-z]/g
+    while(reg.test(str)){
+      console.log(reg.lastIndex)//1 2
+    }
+  </script>
+</body>
+</html>

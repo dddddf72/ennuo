@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    封装ajax
+     var baseUrl="https://music.aityp.com/"
+     function http(url){
+      return new Promise((resolve,reject)=>{
+       $.ajax({
+           url:baseUrl+url,
+           type:"get",
+           success:res=>{
+               resolve(res)
+           },
+           error:err=>{
+               reject(err)
+           }
+       })
+   })
+}
+
+  //调用
+          http("top/playlist?cat=华语").then(res=>{
+              let id=res.playlists[0].id;
+              return id
+          }).then(res=>{
+              http(`playlist/detail?id=${id}`).then(res=>{
+                  let id=res.playlists.trackIds[0].id;
+                  return id
+          }).then(res=>{
+              http(`song/url?id=${res}`).then(res=>{
+                  console.log(res)
+              })
+          })
+        })
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="current" id="test">hello world</p>
+  <p>
+    a.nodeType==1  为元素节点
+b.nodeType==2  为属性节点
+c.nodeType==3  位文本节点
+  </p>
+
+    <script>
+
+        var eNode = document.getElementById("test");
+        var aNode = eNode.getAttributeNode("class");
+        var tNode = eNode.firstChild;
+        alert(aNode.nodeType)
+    </script>
+</body>
+</html>

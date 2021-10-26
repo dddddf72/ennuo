@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>广告关闭案例</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .wx {
+      width: 262px;
+      height: 262px;
+      margin: 20px auto;
+      position: relative;
+      display: block;
+    }
+
+    .wx>span {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      border: 1px solid #ccc;
+      text-align: center;
+      top: 17px;
+      line-height: 16px;
+      left: -2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+  <body onload="init()">
+    <div id="father">
+        <!--定时弹出广告部分-->
+        <img src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg" width="100%" style="display: none;" id="Ad"/>
+    </div>
+  <!-- <div class="wx">
+    <span class="wxclose">X</span>
+    <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+  </div>
+  <script>
+    window.onload = function () {
+      let wxclose = document.getElementsByClassName('wxclose')[0]
+      let wxparent = document.getElementsByClassName('wx')[0]
+      console.log(wxclose, wxparent);
+      wxclose.addEventListener('click', function () {
+        wxparent.style.display = 'none'
+      })
+    }
+  </script> -->
+
+  <!-- <input type="button"  value=" 返回上一个页面" onclick="javascript:history.back()"/> -->
+  　　<a href="#" onclick="tiao()">跳转到首页</a>　
+  <script>
+    function tiao() {
+      window.location.href = 'http://www.itcast.cn'
+    }
+  </script>
+</body>
+
+</html>

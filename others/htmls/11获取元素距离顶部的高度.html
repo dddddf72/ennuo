@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app" style="padding: 100px;background-color: #5f5;">
+    <div id="ele" style="width: 120px;height:20px;background-color: #8d5d8d;">这是一个方块</div>
+  </div>
+  <script>
+    function getOffsetTop(element){
+      var realHeight = element.offsetTop;
+      var parentNode = element.offsetParent
+      console.log(parentNode)
+      while(parentNode != null){
+        realHeight +=parentNode.offsetTop
+        parentNode = parentNode.offsetParent
+      }
+      return realHeight
+    }
+    var ele = document.getElementById("ele")
+    getOffsetTop(ele)
+    console.log(getOffsetTop(ele))
+
+  </script>
+</body>
+</html>

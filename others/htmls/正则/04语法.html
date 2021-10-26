@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // //备选字符集  规定某一位字符的备选字符列表  特点：必须且只能多选一
+    // var str = "上海，上天，上去，上哪";
+    // var reg = /上[海天]/g;
+    // console.log(str.replace(reg,"**"))//**，**，上去，上哪
+
+
+    // 备选字符的unicode号连续  //  [0-9a-zA-Z]//一个数字或字母
+    //预定义字符集:针对常用的备选字符集提供的简化符号   
+    //  [0-9a-zA-z_]  --> \w  代表一位数字字母或下划线
+    //  \s  代表一位空字符：空格，tab，换行
+    // .    代表除换行外，其余所有字符
+
+    
+    //量词：定字符集出现的次数  特点：默认一个量词，仅修饰左侧紧邻的字符集
+    // 确定数量 {m,}  代表m个以上
+
+    // 不确定数量 ? -->代表一个或0个
+    // +  -->代表一个以上
+    // *  -->代表多个或没有
+    // test()方法用于检测正则表达式是否匹配字符串的一部分   返回Boolean值
+    var reg =/\d{5,9}/;
+    var str = "323232hell";
+    console.log(reg.test(str));  //true"
+
+
+    // 贪婪模式和懒惰模式
+    var str1 = "123456abc";
+    var reg1 = /\d{3,6}/;
+    console.log(str1.replace(reg1,"*"))//*abc
+
+    var str2 = "123456abc";
+    var reg2 = /\d{3,6}?/;
+    console.log(str2.replace(reg2,"*"))//*456abc
+
+
+    // 选择和分组     |和()
+    // 转义字符\
+    var a ="hello\"";
+    console.log(a); //hello"
+    // 例子：
+    // 手机号：+86或0086  可有可无，最多一个，空字符不限制格式。1 34578选其一，9位数字
+    var reg = /(\+86|0086)?\s*1[34578]\d{9}/
+
+
+    // 指定匹配的位置
+    // ^\s+   //匹配字符串开头的所有空字符
+    // \s+$   //匹配字符串结尾的所有空字符
+    var a = "   hello"
+    var reg = /^\s+/
+    var str = a.replace(reg,"")
+    console.log(str)//hello
+
+    //排除  除了abc [^abc]
+    // 
+
+    // 多态
+    function action(person){
+      person.act()
+    }
+    var Listener = function(){}
+    Listener.prototype.act = function(){
+      console.log("打开现场的灯光")
+    }
+    var Commoner = function(){}
+    Commoner.prototype.act = function(){
+      console.log("群众演员到地")
+    }
+    var Leader = function(){}
+    Leader.prototype.act = function(){
+      console.log("主角背台词")
+    }
+    action(new Listener())
+
+
+
+
+    
+  </script>
+</body>
+</html>

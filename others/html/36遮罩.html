@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    img{
+      width: 40px;
+      vertical-align: bottom;
+    }
+    .container{
+      margin: 100px auto;
+      width: 400px;
+      border: 1px solid #333;
+      padding: 20px;
+      position: relative;
+    }
+    .modal{
+      position: absolute;
+      left: 0;top: 0;right: 0;bottom: 0;
+      z-index: 100;
+      background-color: #333;
+      opacity: .2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="" alt="">
+    <div class="modal"></div>
+  </div>
+  <script>
+    var container = document.getElementsByClassName("container")[0]
+    var modal = document.getElementsByClassName("modal")[0]
+    var opacity = getComputedStyle(modal).opacity*100
+    var timer = null
+
+    // container.onmouseover = function(){
+    //   clearInterval(rimer)
+    //   timer = setInterval(timer)
+    //   timer = setInterval(function(){
+    //     if(opacity >=80){
+    //       clearInterval(timer)
+    //     }else{
+    //       opacity -=2;
+    //       modal.style.opacity = opacity/100 
+    //     }
+    //   },50)
+    // }
+
+    container.onmouseover  = function(){
+      animate(80,2)
+    }
+    container.onmouseout = function(){
+      animate(80,-2)
+    }
+    function animate(targetValue,addValue){
+      clearInterval(timer)
+      timer = setInterval(function (){
+        if(opacity = targetValue){
+          clearInterval(timer)
+        }else{
+          opacity = opacity+addValue
+          modal.style.opacity = opacity/100
+        }
+      },50)
+    }
+  </script>
+</body>
+</html>

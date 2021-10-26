@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getMaxOfArr(numArray){
+      return Math.max.apply(null,numArray)
+    }
+    function getMaxOfArray(arr){
+      var max = arr[0]
+      for(var i =1;i<arr.length;i++){
+        if(arr[i]>max){
+          max = arr[i]
+        }
+      }
+      return max
+    }
+    var arr = [1,3,5]
+    console.log(getMaxOfArr(arr))//5
+    console.log(Math.max(...arr))
+    console.log(getMaxOfArray(arr))
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <style>
+    .total{
+      height: 10000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="total">
+
+  </div>
+  <script>
+    // window.onscroll = function(){
+    //   var scorllHeight = window.scrollY;
+    //   console.log(scorllHeight)
+    //   // 或者 window.pageYOffset
+    // }
+    // $(window).scroll(function(){
+    //   var height = $(window).scrollTop()
+    //   // console.log(height)
+    // })
+    window.onscroll = function(){
+      var height = document.body.scrollTop || document.documentElement.scrollTop;
+      console.log(height)
+    }
+
+    // async function goes(){
+    //   return 10;
+    // }
+    // (async()=>{
+    //   var data = await goes();
+    //   console.log(data);
+    // })
+
+    // 闭包
+    function go(){
+      var a = 1;
+      return function b(){
+        a++;
+        console.log(a)
+      }
+    }
+    var a = go();
+    a();
+    a();
+  </script>
+</body>
+</html>

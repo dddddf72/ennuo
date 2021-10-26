@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    img{
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      margin: 100px;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg" alt="">
+  <script>
+    var img = document.getElementsByTagName("img")[0]
+    document.onmousemove = function(event){
+      var pageX = event.clientX
+      var pageY = event.clientY
+      img.style.cssText = `left:${pageX}px;top:${pageY}px`
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <li>苹果<a href="#">删除</a></li>
+<li>小米<a href="#">删除</a></li>
+<li>华为<a href="#">删除</a></li>
+<script>
+    var childs =  document.getElementsByTagName("a");
+    for(let i =0;i<childs.length;i++){
+        childs[i].onclick = function(){
+            this.parentNode.style.display = "none";
+            return false;
+        }
+    }
+</script>
+
+
+</body>
+</html>

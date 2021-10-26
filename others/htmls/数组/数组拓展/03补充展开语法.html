@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sum(x,y,z){
+      return x+y+z
+    }
+    const numbers = [1,3,4]
+    console.log(sum(...numbers))
+    console.log(sum.apply(null,numbers))
+    //数组展开
+    var arr = [1,2,3]
+    console.log(...arr)
+    //字面量数组构造或字符串
+    var arr0 = [1,2,3]
+    var arr1 = [...arr0,..."hello"]
+    console.log(arr1)//[1, 2, 3, "h", "e", "l", "l", "o"]
+    //构造字面量对象时  进行克隆或者属性拷贝
+    let objClone = {...obj}
+    var obj = {
+      name:"zhang",
+      age:20
+    }
+    var li = {...obj}
+    console.log(li)//{name: "zhang", age: 20}
+
+    var parts= ['shoulders','knees']
+    var lyrics = ['head',...parts,'and','toes']
+    console.log(lyrics)// ["head", "shoulders", "knees", "and", "toes"]
+  </script>
+</body>
+</html>

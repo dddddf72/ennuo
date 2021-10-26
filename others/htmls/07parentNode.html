@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <p id="child">hello world</p>
+  </div>
+  <li>苹果<a href="#">删除</a></li>
+  <li>苹果<a href="#">删除</a></li>
+  <li>苹果<a href="#">删除</a></li>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <div id="test">hello world</div>
+  <script>
+    let child  = document.getElementById("child")
+    console.log(child.parentNode)
+
+    var childs = document.getElementsByTagName("a")
+    for(let i = 0;i<childs.length;i++){
+      childs[i].onclick = function(){
+        this.parentNode.style.display = "none"
+        return false
+      }
+    }
+
+    var lis = document.getElementsByTagName("ul")[0].childNodes
+    console.log(lis.length)//7  将空格也算作节点
+
+    let test = document.getElementById("test")
+    test.onclick = function(){
+      test.setAttribute("title","setAttr")
+
+       // 获取可视区域的width
+      var vw = document.body.clientWidth || document.documentElement.clientWidth;
+      //设备的宽度
+      var dw = window.screen.availWidth;
+      console.log(vw);//1290  1904
+      console.log(dw)//1920
+    }
+  </script>
+</body>
+</html>

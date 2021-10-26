@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // match()  将所有匹配的字符（内容）提取出来，返回数组
+    // replace(reg,str) 替换匹配的对象
+    // search() 方法用于检索字符串中指定的字符串的位置  如果没有找到任何匹配的子串，则返回-1
+    // split()  将字符串分割成数组
+
+    // StringObject.match(searchValue)
+    // StringObject.match(regexp)
+
+    // var str = "hello";
+    // console.log(str.match(/l/g))//["l", "l"]
+
+    // // stringObject.replace(regexp/substr,replacement)
+    // var a = "hello"
+    // var reg = /l/g;
+    // console.log(a.replace(reg,"*"))//he**o
+
+    // StringObject.search(regexp)
+    var a = "hello world"
+    var reg = /w/;
+    console.log(a.search(reg))//6
+
+    var a = "helo"
+    var b = "hello"
+    var reg = /l/
+    console.log(a.split(reg))// ["he", "o"]
+    console.log(b.split(reg))// ["he", "", "o"]
+
+  </script>
+</body>
+</html>

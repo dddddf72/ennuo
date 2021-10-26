@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+        font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 0 0 1em 0;
+      }
+      /* 
+      align-content和justify-content属性则会对
+      网格中的行/列（tracks）进行对齐控制（网格容器中需要在排列完行/列元素后有多余的空间）
+      */
+
+      .container {
+        width: 500px;
+        height: 300px;
+        border: 5px solid rgb(111, 41, 97);
+        border-radius: 0.5em;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 20px;
+        align-content: space-between;
+        justify-content: end;
+      }
+
+      .container > div {
+        padding: 10px;
+        background-color: rgba(111, 41, 97, 0.3);
+        border: 2px solid rgba(111, 41, 97, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>

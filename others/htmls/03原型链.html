@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name
+          this.age = age
+        }
+        sayName() {
+          console.log(this.name)//lisi
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, skill) {
+          super(name, age)
+          this.skill = skill
+        }
+      }
+      var wang = new Person('wangwu', 18)
+      var s = new Student('lisi', 17, 'html')
+      s.sayName()
+      console.log(s)
+      //error Identifier 'Person' has already been declared
+    </script>
+  </body>
+</html>

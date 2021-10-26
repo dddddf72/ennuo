@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #box {
+        width: 400px;
+        height: 200px;
+        border: 1px solid #000000;
+        background: #c0c0c0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -100px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      #box1 {
+        width: 100%;
+        height: 100%;
+        background: pink;
+        opacity: 0.5;
+      }
+
+      #close {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var box = document.getElementById('box') //获取节点
+        var close = document.getElementById('close')
+        var time = document.getElementById('time')
+        var now = 5
+        function showtime() {
+          //封装函数
+          now-- //每次减1
+          if (now < 0) {
+            //如果比0小 关掉定时器 并设置两个隐藏
+            clearInterval(timer)
+            box.style.display = 'none'
+            box1.style.display = 'none'
+          }
+          time.innerHTML = now + '秒' //显示时间
+        }
+        var timer = setInterval(showtime, 1000) //定时器
+        close.onclick = function () {
+          //按钮操作
+          clearInterval(timer) //关闭定时器
+          box.style.display = 'none' //隐藏
+          box1.style.display = 'none'
+          /*  */
+          window.location.href = 'http://www.itcast.cn'
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="box1">
+      <div id="box">
+        <p id="time">5秒</p>
+        <p id="close">X</p>
+      </div>
+    </div>
+  </body>
+</html>

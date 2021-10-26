@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <input type="text" id="input">
+    <ul id="app">
+
+    </ul>
+    <script>
+      http()
+      $(window).scroll(function(){
+        if(isReachBottom()){
+          http()
+        }
+      })
+      function isReachBottom(){
+        var scrollTop = $(window).scrollTop()
+        var availHeight = $(window).height()
+        var dh = $(document).height()
+        return (scrollTop+availHeight>dh-200)?true:false
+      }
+        function http(){
+          /* todoList */
+          var arr = [];
+          var input = document.getElementById("input");
+          // var app = document.getElementById("app");
+          input.onkeydown = function(event){
+              if(event.keyCode == 13){
+                  if( arr.indexOf(this.value) == -1 && this.value!=""){
+                      arr.push(this.value);
+                      var li = document.createElement("li");
+                      li.innerHTML = this.value;
+                      var html = `
+                        <div>\
+                          <div>one</div>\
+                          <ul>\
+                            <li>two</li>\
+                            <li>three</li>\
+                          </ul>\
+                        </div>
+                        <div>four</div>
+                      `
+                      var html1 = `
+                        <div>
+                          <div>one</div>
+                          <ul>
+                            <li>two</li>
+                            <li>three</li>
+                          </ul>
+                        </div>
+                        <div>four</div>
+                      `
+                      // app.append(html1);
+                      $("#app").append(html1)
+                  }
+                  // console.log(arr);
+                  /* var li = document.createElement("li");
+                  li.innerHTML = this.value;
+                  app.append(li); */
+                  // app.prepend(li);
+              }
+          }
+        }
+    </script>
+</body>
+</html>

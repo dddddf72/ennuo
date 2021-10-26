@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea{
+      height: 100px;
+    }
+    div{
+      overflow-x: scroll;
+    }
+  </style>
+</head>
+<body>
+  <!-- <textarea name="" id="test" cols="" rows="">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, vitae. Modi libero blanditiis quae iusto quo! Ad quos animi cumque, iure possimus esse blanditiis dolor a. Architecto dolores rem nulla!
+  </textarea> -->
+
+  <div id="test">
+    <p style="width: 2000px;">hello world</p>
+  </div>
+  <script>
+    var test = document.getElementById("test")
+    // console.log(test.clientHeight)//104
+    // console.log(test.scrollHeight)//139
+
+    console.log(test.scrollWidth)//2000
+    console.log(test.scrollHeight)//53
+  </script>
+  
+</body>
+</html>

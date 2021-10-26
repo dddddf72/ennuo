@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sayName(label){
+      console.log(label+":"+this.name)
+    }
+    var name = "windows"
+    var cheng = {
+      name:"cheng"
+    }
+    var jiang = {
+      name:"jiang"
+    }
+    sayName.call(this,"window")
+    sayName.call(cheng,"cheng")
+    sayName.call(jiang,"jiang")
+
+    var li = {
+      name:"li",
+      say(){
+        console.log("喜欢吃面")
+      }
+    }
+    var jiang = {}
+    li.say.call(jiang)
+  </script>
+</body>
+</html>

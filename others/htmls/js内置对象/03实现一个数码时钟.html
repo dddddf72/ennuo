@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="clock">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+    </div>
+    <script>
+      showTime()
+      setInterval(showTime,1000)
+      function showTime(){
+        var d = new Date()
+        var hour = d.getHours()
+        var minutes = d.getMinutes()
+        var seconds = d.getSeconds()
+        //小于十补零
+        function add(time){
+          if(time<10){
+            return "0"+time
+          }else{
+            return time +""
+          }
+        }
+        var allTime = add(hour)+add(minutes)+add(seconds)
+        console.log(allTime)
+        //2.分割字符串显示系统时间
+        var arr = allTime.split("")
+        console.log(arr)
+        var imgs = document.getElementsByTagName("img")
+        for (let i = 0; i < imgs.length; i++) {
+          imgs[i].src = "images/"+arr[i]+".png"
+        }
+      }
+    </script>
+</body>
+</html>

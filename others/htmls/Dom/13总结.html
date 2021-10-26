@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(document instanceof HTMLDocument)//true
+    /* 
+    document节点有以下特征：
+    nodeType的值为9
+    nodeName为"#document"
+    nodeValue的值为null
+    parentNode的值为null
+    ownerDocument的值为null
+    */
+    console.log(document.documentElement)
+    console.log(document.childNodes)
+    console.log(document.documentElement === document.childNodes[1])//true
+    console.log(document.doctype)//<!DOCTYPE html>
+    console.log(document.doctype == document.childNodes[0])//true
+  </script>
+</body>
+</html>

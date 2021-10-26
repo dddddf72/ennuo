@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="test">test</div>
+  <script>
+    /* 
+    classList对象有下列方法。
+
+  add()：增加一个 class。
+  remove()：移除一个 class。
+  contains()：检查当前元素是否包含某个 class。
+  toggle()：将某个 class 移入或移出当前元素。
+  item()：返回指定索引位置的 class。
+    */
+    var lis = document.getElementsByClassName("test")[0]
+    lis.onclick = function(){
+      alert(this.classList.contains("test"))//true
+    }
+  </script>
+</body>
+</html>

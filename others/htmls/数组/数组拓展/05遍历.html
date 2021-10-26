@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+  <script>
+    //forEach
+    // var arr = [5,2,3,4]
+    // // arr.forEach(element => {
+    // //   console.log(element)
+    // // });
+    // arr.forEach(function(value,index){
+    //   // console.log(index)//0123
+    //   console.log(value)
+    // })
+
+    // //jQuery-each
+    // var arr = [5,2,3,4]
+    // $.each(arr,function(index,value){
+    //   console.log(index)//0123
+    // })
+
+    // //clone数组
+    // const items = ['item1','item2','item3']
+    // const copy = []
+    // // for (let i = 0; i < items.length; i++) {
+    // //   copy.push(items[i])
+    // // }
+    // items.forEach(function(item){
+    //   copy.push(item)
+    // })
+    // console.log(copy)
+
+    //of
+    // var arr = [5,2,3,4]
+    // for (let value of arr) {
+    //   console.log(value)//5234
+    // }
+
+    //map
+    // var arr = ["a","b","c","d"]
+    // var b = arr.map(item=>{
+    //   return item+"1"
+    // })
+    // console.log(b)// ["a1", "b1", "c1", "d1"]
+
+    //some  只要一部分满足条件就返回true
+    // const arr = [4,16,12,20]
+    // var a = arr.some(item=>{
+    //   return item > 18
+    // })
+    // console.log(a)//true
+
+    //findIndex 遍历数组  获取满足条件的下标值
+    const arr = [4,12,16,20,21]
+    var a= arr.findIndex((item,index)=>{
+      return item > 16
+    })
+    console.log(a)//3
+
+
+  </script>
+</body>
+</html>

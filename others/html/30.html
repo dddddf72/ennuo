@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var Left = obj
+        .filter(function (el) {
+          return (  
+            el.cellX + el.width <= X + W * 0.5 &&
+            ((el.cellY >= Y && el.cellY <= Y + H) ||
+              (el.cellY <= Y && el.cellY + el.height >= Y))
+          )
+        })
+        .sort(function (a, b) {
+          return (
+            b.cellX + b.width - a.cellX - a.width ||
+            (a.cellY + a.height * 0.5 + b.cellY + b.height * 0.5 - 2 * Y - H) *
+              (a.cellY + a.height * 0.5 - b.cellY - b.height * 0.5) ||
+            a.cellY - b.cellY
+          )
+        })[0]
+    </script>
+  </body>
+</html>
+
+判断cell高度有重合的部分
+判断cell的右边界是否在当前cell中点的左侧
+
+
+判断cell的右边界是否在当前cell中点的左侧
+el.cellX + el.width <= X + W * 0.5
+判断cell高度有重合的部分
+判断cell的上边界是否在当前cell上下边界内
+(el.cellY >= Y && el.cellY <= Y + H)
+判断cell的上边界在当前cell的上边界上方，并且cell的下边界在当前cell的上边界的下方
+(el.cellY <= Y && el.cellY + el.height >= Y)
+
+判断cell右边界更靠右
+b.cellX + b.width - a.cellX - a.width
+？？？
+(a.cellY + a.height * 0.5 + b.cellY + b.height * 0.5 - 2 * Y - H) *
+(a.cellY + a.height * 0.5 - b.cellY - b.height * 0.5)
+判断cell上边界更靠上
+a.cellY - b.cellY
+
+++ +- -+ --
+
+(a.cellY + a.height * 0.5 + b.cellY + b.height * 0.5 - 2(Y + H * 0.5)
+
+2 *  (（a.cellY + a.height * 0.5 + b.cellY + b.height * 0.5）/2 - (Y + H * 0.5) 
+ *
+(a.cellY + a.height * 0.5 - b.cellY - b.height * 0.5)
+= a.cellY + a.height * 0.5 - (b.cellY + b.height * 0.5)
+

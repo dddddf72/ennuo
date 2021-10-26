@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="parent">frfrfr<p>hello world</p></div>
+  <script>
+    var parent = document.getElementById("parent")
+    var tnode = parent.firstChild;//输出第一个节点"frfrfr"
+    var anode = parent.getAttributeNode("id")
+    console.log(parent.firstChild)//"  frfrfr  "//在标签换行的情况下
+    console.log(tnode)
+    //frfrfr
+    console.log(anode)//属性节点  id="parent"
+    console.log(parent.firstElementChild)
+    //<p>hello world</p>  第一个元素节点
+    console.log(parent.nodeType)
+    console.log(anode.nodeType)
+    console.log(tnode.nodeType)
+  </script>
+</body>
+</html>

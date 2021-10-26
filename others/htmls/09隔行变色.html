@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #333;
+        width: 500px;
+        line-height: 50px;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>商城</th>
+          <th>手机</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>天猫</td>
+          <td>小米</td>
+        </tr>
+        <tr>
+          <td>天猫</td>
+          <td>小米</td>
+        </tr>
+        <tr>
+          <td>天猫</td>
+          <td>小米</td>
+        </tr>
+        <tr>
+          <td>天猫</td>
+          <td>小米</td>
+        </tr>
+        <tr>
+          <td>天猫</td>
+          <td>小米</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+        let table = document.getElementById("table");
+        let tHead = table.tHead;
+        console.log(tHead)
+        let tRows = table.tBodies[0].rows;
+        console.log(tRows)
+        tHead.style.backgroundColor = "#ff2d51";
+        for(let i=0;i<tRows.length;i++){
+            if(i%2 ==0 ){
+                tRows[i].style.backgroundColor = "#eee";
+            }else{
+                tRows[i].style.backgroundColor = "#44cef6"
+            }
+        }
+    </script>
+  </body>
+</html>

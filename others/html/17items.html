@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+        font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 0 0 1em 0;
+      }
+
+      .container {
+        width: 500px;
+        border: 5px solid rgb(111, 41, 97);
+        border-radius: 0.5em;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 20px;
+        align-items: center;
+        justify-items: start;
+      }
+
+      .special {
+        grid-column: 2 / 4;
+        align-self: end;
+        justify-self: end;
+      }
+
+      .container > div {
+        padding: 10px;
+        background-color: rgba(111, 41, 97, 0.3);
+        border: 2px solid rgba(111, 41, 97, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      align-items和justify-items属性相对是align-self和justify-self属性的一种批量形式。这些属性会控制与元素在其网格区域（grid area）中的对齐情况。
+     -->
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div class="special">5</div>
+    </div>
+  </body>
+</html>

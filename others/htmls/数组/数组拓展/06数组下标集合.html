@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+  <script>
+    //数组的方法
+    // indexOf()  返回数组中值的下标
+    // array1.indexOf(searchElement[,fromIndex])
+    // var arr = [1,2,3]
+    // var index = arr.indexOf(2)//1
+
+    //jQuery获取数组中值的下标  $.inArray(value,arr)
+    // var arr = [1,2,3,4]
+    // var index = $.inArray(2,arr)
+    // console.log(index)//1
+
+    // array.keys() 返回一个迭代对象  包含数组的下标
+    // var arr=["cheng","li","zhang"] 
+    // var nIndex = arr.keys()//[[Prototype]]: Array Iterator
+    // console.log(nIndex)
+    // for (let key of nIndex) {
+    //   console.log(key)//012
+    // }
+
+    //让数组的下标转为数组
+    // var arr = ["cheng","li","zhang"]
+    // var oIndex = Object.keys(arr)
+    // console.log(oIndex)//["0", "1", "2"]  为字符串
+    // var nIndex = [...arr.keys()]
+    // console.log(nIndex)//[0, 1, 2]
+
+
+    //isArray()判读一个对象是不是数组
+    // var arr = [1,2,4]
+    // console.log(Array.isArray(arr))
+    // console.log(arr instanceof Array)
+    // console.log(arr.constructor == Array) //Live reload enabled.
+
+    //Array.of()传入的参数返回一个数组  ie-Edge支持外，其他的ie都不支持
+    var arr = Array.of(1,2,3)
+    console.log(arr)// [1, 2, 3]
+  </script>
+</body>
+</html>

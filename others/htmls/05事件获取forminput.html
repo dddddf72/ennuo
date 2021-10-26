@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <input type="text" name="username" value="cheng">
+    <input type="button" value="输出名字" id="show">
+</form>
+<script>
+   var show = document.getElementById("show");
+   var user  = document.getElementsByName("username")[0]
+   show.onclick = function(){
+    console.log(user.value)   
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+      * {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 200px;
+        float: left;
+        border: 1px solid red;
+      }
+      .container {
+        position: relative;
+      }
+    </style>
+  </head>
+  <script>
+    $(function () {
+      let boxArr = $('.box')
+      let heightArr = [0, 0, 0]
+      $.each(boxArr, function (index, img) {
+        let boxHeight = $(img).height()
+        if (index <= 2) {
+          heightArr[index] = boxHeight
+        } else {
+          let minHeight = Math.min.apply(null, heightArr)
+          let index = heightArr.indexOf(minHeight)
+          $(img).css({
+            position: 'absolute',
+            left: index * 200 + 'px',
+            top: minHeight + 20 + 'px',
+          })
+          heightArr[index] += boxHeight + 20
+        }
+      })
+    })
+  </script>
+  <body>
+    <div class="container" id="container">
+      <img
+        class="box"
+        src="http://img0.imgtn.bdimg.com/it/u=1322674466,1169403322&fm=26&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="http://img5.imgtn.bdimg.com/it/u=2216635581,484225514&fm=26&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572184266179&di=a3ffe174bb43d42e97c4e8714538396f&imgtype=0&src=http%3A%2F%2Fk.zol-img.com.cn%2Fnokia%2F6184%2Fa6183364.jpg"
+      />
+      <img
+        class="box"
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572184266179&di=a3ffe174bb43d42e97c4e8714538396f&imgtype=0&src=http%3A%2F%2Fk.zol-img.com.cn%2Fnokia%2F6184%2Fa6183364.jpg"
+      />
+      <img
+        class="box"
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572184266179&di=a3ffe174bb43d42e97c4e8714538396f&imgtype=0&src=http%3A%2F%2Fk.zol-img.com.cn%2Fnokia%2F6184%2Fa6183364.jpg"
+      />
+      <img
+        class="box"
+        src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4101043716,1476601370&fm=27&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="http://img5.imgtn.bdimg.com/it/u=2216635581,484225514&fm=26&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="http://img5.imgtn.bdimg.com/it/u=1379036236,1644460591&fm=26&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="http://img0.imgtn.bdimg.com/it/u=1322674466,1169403322&fm=26&gp=0.jpg"
+      />
+      <img
+        class="box"
+        src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4101043716,1476601370&fm=27&gp=0.jpg"
+      />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#box{
+			width: 500px;
+			height: 500px;
+			background: url(../img/6.jpg);
+			margin: 10px auto;
+			background-size:100% 100%;
+			color: white;
+		}
+		p{
+			padding-top: 5px;
+			display: block;
+		}
+		#left{
+			float: left;
+		}
+		#right{
+			float: right;
+			display: none;
+		}
+	</style>
+	</head>
+ 
+	<body>
+		<div id="box">
+			<p>
+				<span id="left">
+					剩余
+					<span id="t">5</span>
+					S
+				</span>
+				<span id="right">X关闭</span>
+			</p>
+		</div>
+		
+		<script type="text/javascript">
+			var time = document.getElementById("t").innerHTML;
+//			console.log(time);
+			var close = document.getElementById("right");
+			var bigBox = document.getElementById("box"); 
+			var timer = setInterval(function(){
+				time--;
+				document.getElementById("t").innerHTML = time;
+				if(time<=0){
+					close.style.display = 'block';
+					clearTimeout(timer);
+				}
+				
+			},1000);
+			
+			close.onclick = function(){
+					bigBox.style.display = 'none';
+				}
+ 
+		</script>
+	</body>
+</html>

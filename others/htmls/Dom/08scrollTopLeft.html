@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 2000px;
+    }
+    #btn{
+      position: fixed;
+      width: 40px;
+      height: 70px;
+      right: 0;
+      bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">btn</button>
+  <script>
+    // 查看整张网页的水平和垂直的滚动距离
+    // document.documentElement.scrollLeft
+    // document.documentElement.scrollTop
+    var btn = document.getElementById("btn")
+    btn.onclick = function(){
+      var height = document.documentElement.scrollTop
+      if(height>0){
+        document.documentElement.scrollTop = 0
+      }
+    }
+  </script>
+</body>
+</html>

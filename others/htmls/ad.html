@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .djs {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 700px;
+        color: white;
+        background-color: darkred;
+      }
+      .end {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="djs"></div>
+    <img class="ad" src="../images/1.png" alt="" />
+    <div class="end">广告已结束</div>
+    <script>
+      //5秒关闭广告
+      var ad = document.querySelector('.ad')
+      var div = document.querySelector('.djs')
+      var end = document.querySelector('.end')
+      var t = 5
+      fun()
+      setInterval(fun, 1000)
+      function fun() {
+        div.innerHTML = t
+        if (t == 0) {
+          ad.style.display = 'none'
+          div.style.display = 'none'
+          end.style.display = 'block'
+        }
+        t--
+      }
+    </script>
+  </body>
+</html>

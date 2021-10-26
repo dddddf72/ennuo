@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function debounce(fn, delay=500) {
+        // 记录上一次的延时器
+        var timer = null;
+        return function () {
+            var args = arguments;
+            var that = this;
+            // 清除上一次延时器
+            if(timer){
+                clearTimeout(timer)
+            }
+            timer = setTimeout(function () {
+                fn.apply(that,args)
+                timer = null;
+            }, delay);
+        }
+    }
+    debounce()
+</script>
+
+</body>
+</html>

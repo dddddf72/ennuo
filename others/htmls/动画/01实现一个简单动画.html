@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <style>
+    #test{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: red;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <button id="btn">btn</button>
+  <script>
+    var btn = document.getElementById("btn")
+    var test = document.getElementById("test")
+    var timer;
+    // btn.click = function(){
+    //   timer = setInterval(function(){
+    //     if(test.offsetLeft == 300){
+    //       clearInterval(timer)
+    //     }else{
+    //       test.style.left = test.offsetLeft+10+"px"
+    //     }
+    //   }, 100);
+    // }
+
+    //多次点击btn会有一个明显的加速效果，因为每点击一下，开一个定时器
+    //解决方案  在开启定时器之前，先清除定时器
+    // btn.click = function(){
+    //   clearInterval(timer)
+    //   timer = setInterval(function(){
+    //     var speed = 1
+    //     if(test.offsetLeft >= 300){
+    //       clearInterval(timer)
+    //     }else{
+    //       test.style.left = test.offsetLeft+speed+"px"
+    //     }
+    //   }, 30);
+    // }
+
+    //推荐使用setTimeout  这样不用关闭定时器
+    btn.click = function(){
+      function go(){
+        if(test.offsetLeft<100){
+          test.style.left = test.offsetLeft+10+"px"
+          setTimeout(go, 30);
+        }
+      }
+      go()
+    }
+  </script>
+</body>
+</html>
